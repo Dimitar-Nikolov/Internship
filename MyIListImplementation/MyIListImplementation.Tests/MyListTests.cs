@@ -1,11 +1,9 @@
 using MyIListImplementation.Models;
 using NUnit.Framework;
-using System.Collections;
-using System.Collections.Generic;
 
 namespace Tests
 {
-    public class MyListTests
+    public abstract class MyListTests
     {
         protected MyList<int> intList;
 
@@ -16,7 +14,7 @@ namespace Tests
         // Reason use of other test object methods inside test methods (Add in Remove method Tests)
         // Reason Testing methods based entirely on microsft or other tested libraries
         [SetUp]
-        public void Setup()
+        public virtual void Setup()
         {
             this.intList = new MyList<int>();
         }
@@ -28,7 +26,7 @@ namespace Tests
         }
 
         [Test]
-        public void Setter_SetItemToNonexistentIndex_ThrowsMyListIndexException()
+        public virtual void Setter_SetItemToNonexistentIndex_ThrowsMyListIndexException()
         {
             Assert.That(() => this.intList[1] = 5,
                 Throws.Exception.With.Message.EqualTo("Index was outside the bounds of the MyList"));

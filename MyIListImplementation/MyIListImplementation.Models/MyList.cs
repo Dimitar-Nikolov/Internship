@@ -52,9 +52,7 @@ namespace MyIListImplementation.Models
 
         public bool Contains(T item)
         {
-
-
-            return this.array.Any(i => i.Equals(item));
+            return this.array.Any(i => i != null && i.Equals(item));
         }
 
         public void CopyTo(T[] array, int arrayIndex)

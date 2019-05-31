@@ -8,6 +8,12 @@ namespace MyListImplementation.App
     {
         static void Main(string[] args)
         {
+            List<int> ints = new List<int>();
+            ints.Add(1);
+            ints.Clear();
+
+            ints.Clear();
+
             MyList<int> list = new MyList<int>();
 
             list.Add(0);
@@ -48,6 +54,7 @@ namespace MyListImplementation.App
             MyList<string> stringList = new MyList<string>();
 
             stringList.Add(null);
+            stringList.Add("sada");
             stringList.Contains("sada");
 
 
